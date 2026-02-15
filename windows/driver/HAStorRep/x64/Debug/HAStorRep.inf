@@ -1,0 +1,52 @@
+;
+; HAStorRep.inf
+;
+
+[Version]
+Signature   = "$WINDOWS NT$"
+Class       = System
+ClassGuid   = {4d36e97d-e325-11ce-bfc1-08002be10318}
+Provider    = %ProviderString%
+CatalogFile = HAStorRep.cat
+DriverVer = 02/15/2026,12.46.15.778
+PnpLockdown = 1
+
+[DestinationDirs]
+DefaultDestDir = 12
+HAStorRep_Device_CoInstaller_CopyFiles = 11
+
+[SourceDisksNames]
+1 = %DiskName%,,,""
+
+[SourceDisksFiles]
+HAStorRep.sys  = 1,,
+;
+
+
+; ================= Install section =================
+
+[DefaultInstall.NTamd64]
+CopyFiles = HAStorRep_Device.CopyFiles
+
+[HAStorRep_Device.CopyFiles]
+HAStorRep.sys
+
+; ================= Service installation =================
+
+[DefaultInstall.NTamd64.Services]
+AddService = HAStorRep, %SPSVCINST_ASSOCSERVICE%, HAStorRep_Service_Inst
+
+[HAStorRep_Service_Inst]
+DisplayName    = %HAStorRep.SVCDESC%
+ServiceType    = 1               ; SERVICE_KERNEL_DRIVER
+StartType      = 3               ; SERVICE_DEMAND_START
+ErrorControl   = 1               ; SERVICE_ERROR_NORMAL
+ServiceBinary  = %12%\HAStorRep.sys
+
+; ================= Strings =================
+
+[Strings]
+SPSVCINST_ASSOCSERVICE = 0x00000002
+ProviderString         = "Antigravity"
+DiskName               = "HAStorRep Installation Disk"
+HAStorRep.SVCDESC      = "HA Replication Engine Driver (Phase 1A)"

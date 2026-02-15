@@ -1,0 +1,4 @@
+C:\HAReplicationEngine\windows\driver\HAStorRep\Device.c;C:\HAReplicationEngine\windows\driver\HAStorRep\x64\Debug\Device.obj
+C:\HAReplicationEngine\windows\driver\HAStorRep\Driver.c;C:\HAReplicationEngine\windows\driver\HAStorRep\x64\Debug\Driver.obj
+C:\HAReplicationEngine\windows\driver\HAStorRep\Ioctl.c;C:\HAReplicationEngine\windows\driver\HAStorRep\x64\Debug\Ioctl.obj
+C:\HAReplicationEngine\windows\driver\HAStorRep\RingBuffer.c;C:\HAReplicationEngine\windows\driver\HAStorRep\x64\Debug\RingBuffer.obj
